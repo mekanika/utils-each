@@ -1,11 +1,22 @@
+REPORTER = spec
+TESTFILES = $(shell find test/ -name '*.test.js')
 
-build: components index.js
-	@component build --dev
+build: components component
 
 components: component.json
 	@component install --dev
 
-clean:
-	rm -fr build components template.js
+component:
+	@echo "\nCreating component..."
+	@component build --name mekanika-utils-each --standalone each
+	@echo "Done: ./build/mekanika-utils-each.js\n"
 
-.PHONY: clean
+test:
+	@NODE_ENV=test ./node_modules/.bin/mocha \
+		--reporter $(REPORTER) \
+		$(TESTFILES)
+
+clean:
+	rm -fr build components
+
+.PHONY: clean component test
