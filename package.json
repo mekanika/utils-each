@@ -1,8 +1,8 @@
 {
   "name": "mekanika-utils-each",
   "version": "0.0.1",
-  "description": "Functional style immutable collection iterator",
-  "main": "lib/index.js",
+  "description": "Functional style immutable collection iterator `each( fn, collection )`",
+  "main": "index.js",
   "scripts": {
   },
   "repository": {
