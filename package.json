@@ -2,6 +2,7 @@
   "name": "mekanika-utils-each",
   "version": "0.0.1",
   "description": "Functional style immutable collection iterator `each( fn, collection )`",
+  "keywords": ["for", "in", "each", "foreach", "object", "array", "functional"],
   "main": "index.js",
   "scripts": {
   },

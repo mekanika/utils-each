@@ -3,7 +3,7 @@
   "repo": "mekanika/utils-each",
   "description": "Functional style immutable collection iterator `each( fn, collection )`",
   "version": "0.0.1",
-  "keywords": ["for", "in", "each", "foreach", "object", "array"],
+  "keywords": ["for", "in", "each", "foreach", "object", "array", "functional"],
   "dependencies": {},
   "development": {},
   "license": "MIT",
