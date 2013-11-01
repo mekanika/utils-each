@@ -1,0 +1,14 @@
+{
+  "name": "mekanika-utils-each",
+  "repo": "mekanika/utils-each",
+  "description": "Functional style immutable collection iterator",
+  "version": "0.0.1",
+  "keywords": [for, in, each, foreach, object, array],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
