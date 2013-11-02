@@ -8,7 +8,8 @@ components: component.json
 
 component:
 	@echo "\nCreating component..."
-	@component build --name mekanika-utils-each --standalone each
+	@./node_modules/component/bin/component build \
+	  --name mekanika-utils-each --standalone each
 	@echo "Done: ./build/mekanika-utils-each.js\n"
 
 test:
