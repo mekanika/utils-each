@@ -6,7 +6,11 @@
 
 ## Installation
 
-  Install with [component(1)](http://component.io):
+  Install with npm:
+
+    $ npm install mekanika-utils-each
+
+  Or install with [component(1)](http://component.io):
 
     $ component install mekanika/utils-each
 
@@ -38,16 +42,20 @@ each( iteratorFn, collection );
 
 ### Setup
 
-In the browser:
-
-```html
-<script src="mekanika-utils-each.js"></script>
-```
-
 Using node:
 
 ```js
 var each = require('mekanika-utils-each');
+```
+
+To use in a browser:
+
+    $ make component
+
+and then include as:
+
+```html
+<script src="build/mekanika-utils-each.min.js"></script>
 ```
 
 ### Examples
