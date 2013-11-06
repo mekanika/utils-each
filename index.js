@@ -27,13 +27,16 @@ module.exports = each;
  *
  * @param {Function} fn Each collection element gets run `fn( val, index, col)`
  * @param {Object|Array} [col] The collection to be iterated
+ * @param {this} [self] Optional `this` context for fn callback
  *
  * @returns {Object|Array|Function} A reference back to the original collection (or a partially applied function)
  */
 
 //+ each :: Function -> Object|Array -> Object|Array
 
-function each( fn, col ) {
+function each( fn, col, self ) {
+
+  self || (self = this);
 
   var _each = function( col ) {
 
@@ -41,7 +44,7 @@ function each( fn, col ) {
     if (typeof col === 'object') {
       for (var key in col) {
         if (col.hasOwnProperty(key))
-          fn.call( this, col[key], key, col );
+          fn.call( self, col[key], key, col );
       }
       return col;
     }
@@ -49,7 +52,7 @@ function each( fn, col ) {
     // Iterate over array elements
     else if (col instanceof Array) {
       for (var i=0; i<col.length; i++) {
-        fn.call( this, col[i], i, col );
+        fn.call( self, col[i], i, col );
       }
       return col;
     }

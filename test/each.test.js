@@ -127,3 +127,40 @@ describe('each( fn )', function() {
   });
 
 });
+
+
+/**
+ * `this` can be optionally passed in
+ */
+
+describe('this Context', function() {
+
+  it('passes in and applies optional `this` context', function() {
+
+    function Woo() {
+      this.spoon = 'spoon';
+
+      this.mod = function( ar, self ) {
+        each( function(v) {
+          self || (self = this);
+          if (!self.spoon) throw new Error('There is no spoon');
+          self.spoon += v;
+        }, ar, self );
+      }
+    }
+
+    var woo = new Woo();
+
+    var err;
+    try {
+      woo.mod( ['yo'] );
+    }
+    catch( e ) { err = e; }
+    expect( err ).to.be.an( Error );
+
+    woo.mod( ['man'], woo );
+    expect( woo.spoon ).to.be( 'spoonman' );
+
+  });
+
+});
