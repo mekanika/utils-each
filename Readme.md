@@ -20,7 +20,7 @@
 Applies a function to a collection (either an `Object` or `Array`) and returns the unmodified collection.
 
 ```js
-each( iteratorFn, collection );
+each( iteratorFn, collection [, thisBinding] );
 ```
 
 ### Params
@@ -32,6 +32,8 @@ each( iteratorFn, collection );
   - `collection` _{Object|Array}_ A reference to the collection being iterated
 
 - `collection` _{Object|Array}_ The collection to be iterated
+
+- `thisBinding` _{*}_ Optional `this` binding for the iteratorFn callback
 
 ### Returns
 
@@ -55,7 +57,7 @@ To use in a browser:
 and then include as:
 
 ```html
-<script src="build/mekanika-utils-each.min.js"></script>
+<script src="build/mekanika-utils-each.js"></script>
 ```
 
 ### Examples
