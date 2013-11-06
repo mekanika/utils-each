@@ -42,7 +42,7 @@ function each( fn, col ) {
       for (var key in col) {
         if (col.hasOwnProperty(key))
           fn.call( this, col[key], key, col );
-      };
+      }
       return col;
     }
 
@@ -50,13 +50,13 @@ function each( fn, col ) {
     else if (col instanceof Array) {
       for (var i=0; i<col.length; i++) {
         fn.call( this, col[i], i, col );
-      };
+      }
       return col;
     }
 
     // Or fail to iterate
     return new TypeError('Can only iterate over Arrays or Objects');
-  }
+  };
 
   // Return partially applied function or execute iteration on `col`
   return col === undefined
