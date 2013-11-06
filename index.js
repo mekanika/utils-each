@@ -28,7 +28,7 @@ module.exports = each;
  * @param {Function} fn Each collection element gets run `fn( val, index, col)`
  * @param {Object|Array} [col] The collection to be iterated
  *
- * @returns {Object|Array} A reference back to the original collection
+ * @returns {Object|Array|Function} A reference back to the original collection (or a partially applied function)
  */
 
 //+ each :: Function -> Object|Array -> Object|Array
